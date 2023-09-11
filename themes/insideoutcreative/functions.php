@@ -12,3 +12,15 @@ wp_enqueue_style('proxima-nova', get_theme_file_uri('/proxima-nova/proxima-nova.
 
 }
 add_action('wp_enqueue_scripts', 'cyber_trucks_domains_stylesheets');
+
+function cyber_trucks_domains_menus() {
+	register_nav_menus( array(
+	  'primary' => __( 'Primary' )));
+   register_nav_menus( array(
+   'secondary' => __( 'Secondary' )));
+	register_nav_menu('footer',__( 'Footer' ));
+	add_theme_support('title-tag');
+	add_theme_support('post-thumbnails');
+   }
+   
+   add_action('after_setup_theme', 'cyber_trucks_domains_menus');
